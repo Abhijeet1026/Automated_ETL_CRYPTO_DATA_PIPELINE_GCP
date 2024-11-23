@@ -5,7 +5,8 @@
 4. [Data Pipeline](#Data-Pipeline)
    - Ingestion
    - Processing
-   - Tranformations
+   - Transformations
+   - Automation
 5. [Visualization](#Visualization) 
 6. [Summary](#Summary)
 7. [Reference](#reference)
@@ -29,3 +30,10 @@ The main objectives of this project are as follows:
 - Data Visualization: Leverage Looker to create insightful visualizations, enabling users to understand trends and make data-driven decisions.
   
 This project showcases an end-to-end data engineering solution for real-time cryptocurrency analytics using GCP tools.
+
+# Architectural Solution
+
+The diagram below showcases the architectural solution built using cloud technologies with automation at its core. This architecture is optimized for processing near real-time data and efficiently loading transformed data into BigQuery in batches. It is designed to ensure scalability, performance, and cost-effectiveness by leveraging the advanced capabilities of cloud infrastructure to minimize operational expenses while maximizing efficiency.
+
+![Crypto_Arch](https://github.com/user-attachments/assets/d3f65c18-a511-4cd2-a516-2b9a8867929d)
+
