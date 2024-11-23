@@ -51,6 +51,10 @@ A data pipeline is a series of data processing steps that automate the movement 
 
 ![Screenshot 2024-11-23 at 7 17 52 PM](https://github.com/user-attachments/assets/e9e6c2df-7d1e-4b03-bd98-0067fc93711c)
 
+- Transformations: Data transformation is performed using a DataProc cluster, a fully managed cloud service provided by Google Cloud that enables efficient, scalable processing of big data using Apache Spark and Hadoop. It simplifies cluster management, scaling, and integration with other Google Cloud Platform (GCP) services. This transformation process is orchestrated through an Airflow DAG, which is executed every 7 hours. The first task in the DAG creates the DataProc cluster. Once the cluster is operational, a job is submitted using a Python script stored in a GCS bucket to transform the raw data according to the specified job. After the transformation, the job loads the processed data into BigQuery in batches. Once the transformation and loading tasks are complete, the DAG triggers another task to delete the DataProc cluster. Deleting the cluster after each execution helps reduce costs by avoiding charges for idle resources. Finally, the last task of the DAG moves the raw data files that were processed by the DataProc cluster into an archive bucket for future reference, ensuring data preservation. Please refer below to see the screenshot of graphical representation of this dag. 
+  ![Screenshot 2024-11-23 at 7 42 34 PM](https://github.com/user-attachments/assets/5c263861-1404-4da5-ba18-3eaecb86598e)
+
+
 
 
 
