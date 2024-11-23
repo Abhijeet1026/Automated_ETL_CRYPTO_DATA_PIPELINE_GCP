@@ -35,7 +35,7 @@ This project showcases an end-to-end data engineering solution for real-time cry
 
 The diagram below showcases the architectural solution built using cloud technologies with automation at its core. This architecture is optimized for processing near real-time data and efficiently loading transformed data into BigQuery in batches. It is designed to ensure scalability, performance, and cost-effectiveness by leveraging the advanced capabilities of cloud infrastructure to minimize operational expenses while maximizing efficiency.
 
-![Crypto_Arch](https://github.com/user-attachments/assets/d3f65c18-a511-4cd2-a516-2b9a8867929d)
+   ![Crypto_Arch](https://github.com/user-attachments/assets/d3f65c18-a511-4cd2-a516-2b9a8867929d)
 
 Terraform is used as an Infrastructure as Code (IaC) tool, enabling the automated provisioning and management of cloud resources such as Google Cloud Storage (GCS) buckets and BigQuery tables. By defining infrastructure configurations in code, Terraform ensures consistent, repeatable deployments, which enhances collaboration and reduces the risk of manual errors.
 
@@ -48,11 +48,10 @@ In the following section, we will explore other tools and technologies that furt
 A data pipeline is a series of data processing steps that automate the movement and transformation of data from various sources to a destination, typically a data warehouse or data lake. It ensures that data is collected, processed, and made available for analysis in a timely and efficient manner, allowing organizations to derive insights and make informed decisions based on up-to-date information.
 
 - Data Extraction: This automated pipeline is designed to efficiently handle near-real-time data extraction. Raw data is fetched from the CoinGecko API every 10 minutes. An Airflow DAG has been created to manage and automate this process, ensuring reliable data retrieval. Below is a graphical representation of this DAG in Airflow.
-
-![Screenshot 2024-11-23 at 7 17 52 PM](https://github.com/user-attachments/assets/e9e6c2df-7d1e-4b03-bd98-0067fc93711c)
-
+   ![API_Extraction](https://github.com/user-attachments/assets/146748f4-0185-4ce6-844b-df92de5fa6fe)
+  
 - Transformations: Data transformation is performed using a DataProc cluster, a fully managed cloud service provided by Google Cloud that enables efficient, scalable processing of big data using Apache Spark and Hadoop. It simplifies cluster management, scaling, and integration with other Google Cloud Platform (GCP) services. This transformation process is orchestrated through an Airflow DAG, which is executed every 7 hours. The first task in the DAG creates the DataProc cluster. Once the cluster is operational, a job is submitted using a Python script stored in a GCS bucket to transform the raw data according to the specified job. After the transformation, the job loads the processed data into BigQuery in batches. Once the transformation and loading tasks are complete, the DAG triggers another task to delete the DataProc cluster. Deleting the cluster after each execution helps reduce costs by avoiding charges for idle resources. Finally, the last task of the DAG moves the raw data files that were processed by the DataProc cluster into an archive bucket for future reference, ensuring data preservation. Please refer below to see the screenshot of graphical representation of this dag. 
-  ![Screenshot 2024-11-23 at 7 42 34 PM](https://github.com/user-attachments/assets/5c263861-1404-4da5-ba18-3eaecb86598e)
+   ![Screenshot 2024-11-23 at 7 42 34 PM](https://github.com/user-attachments/assets/5c263861-1404-4da5-ba18-3eaecb86598e)
 
 
 
