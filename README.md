@@ -1,1 +1,1 @@
-# Data Engineering:Automated Crypto DATA PIPELINE GCP
+# Data Engineering:Automated Crypto Data Pipeline GCP
