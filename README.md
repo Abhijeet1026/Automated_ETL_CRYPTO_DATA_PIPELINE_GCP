@@ -18,3 +18,14 @@ At the heart of this project is a fully automated data pipeline that seamlessly 
 The pipeline not only processes raw data but transforms it into meaningful insights, such as identifying the current prices, total supply, trading volumes, and market capitalizations of top-performing coins. This comprehensive approach enables users to understand cryptocurrency trends and make data-driven decisions in an ever-changing market.
 
 By combining the power of the CoinGecko API with the scalability of GCP's data tools, this project demonstrates how cloud-based solutions can be leveraged to build efficient and impactful analytics systems.
+
+# Objective
+The main objectives of this project are as follows:
+
+- Develop a Near Real-Time Data Pipeline: Utilize Google Cloud Platform (GCP) tools to build a robust data pipeline that extracts cryptocurrency data from the CoinGecko API every 10 minutes, 
+  ingesting it into Google Cloud Storage (GCS).
+- Data Transformation and Warehousing: Process and transform raw data from GCS using Dataproc, load it into Google BigQuery as the central data warehouse, and archive the raw data back to GCS for backup and future reference.
+- End-to-End Automation: Automate and orchestrate the entire pipeline using Apache Airflow running on Cloud Composer to ensure seamless, repeatable workflows.
+- Data Visualization: Leverage Looker to create insightful visualizations, enabling users to understand trends and make data-driven decisions.
+  
+This project showcases an end-to-end data engineering solution for real-time cryptocurrency analytics using GCP tools.
