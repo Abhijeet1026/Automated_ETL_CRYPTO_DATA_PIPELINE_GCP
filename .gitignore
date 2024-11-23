@@ -1,0 +1,7 @@
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+LICENSE.txt
+terraform-provider-google_v6.11.2_x5
+
