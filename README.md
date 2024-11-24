@@ -71,20 +71,11 @@ The visualization above offers valuable insights into cryptocurrency data, empha
 
 # Summary
 
-The Automated Crypto Data Pipeline and Analytics project focuses on building a fully automated data pipeline using Google Cloud Platform (GCP) tools to extract, process, and analyze real-time cryptocurrency data from the CoinGecko API. This project demonstrates how cloud technologies, particularly GCP, can be leveraged to automate data extraction, transformation, and storage processes, ensuring high efficiency, scalability, and reliability.
+The Automated Crypto Data Pipeline and Analytics project leverages Google Cloud Platform (GCP) tools to create a fully automated pipeline for extracting, processing, and analyzing real-time cryptocurrency data from the CoinGecko API. This solution automates the ETL (Extract, Transform, Load) process, ensuring scalability, reliability, and high efficiency.
 
-The heart of the solution is an automated data pipeline orchestrated through Apache Airflow running on Cloud Composer, which manages the entire workflow, from data extraction every 10 minutes to batch data loading into BigQuery every 7 hours. This process is fully automated, eliminating manual intervention, reducing errors, and ensuring that the pipeline runs consistently and reliably. By utilizing DataProc, a managed cloud service for big data processing, the pipeline can efficiently handle large-scale transformations and load processed data into BigQuery for analysis. The raw data is archived in Google Cloud Storage (GCS), ensuring future accessibility and data preservation.
+The pipeline extracts data every 10 minutes, transforms it using DataProc for large-scale processing, and loads it into BigQuery for analysis. The entire process is orchestrated by Apache Airflow on Cloud Composer, ensuring seamless automation and reducing manual intervention. Additionally, Terraform is used for Infrastructure as Code (IaC) to automate the provisioning and management of cloud resources, ensuring consistent and repeatable deployments.
 
-In addition, Terraform is used as the Infrastructure as Code (IaC) tool to automate the provisioning and management of cloud resources, including GCS buckets, BigQuery tables, and other essential components. By defining infrastructure configurations in code, Terraform ensures that the entire cloud environment can be consistently and reliably recreated, reducing manual setup errors and enhancing collaboration. This also enables repeatable and scalable deployments, ensuring that infrastructure is managed efficiently and according to best practices.
-
-The automation of these tasks provides several key advantages, including:
-
-   - Reduced operational overhead: Automation eliminates the need for manual intervention, reducing human errors and increasing the reliability of the pipeline.
-   - Cost optimization: By deleting the DataProc cluster after each transformation job, the solution minimizes idle resource charges, ensuring a cost-effective architecture.
-   - Scalability and performance: The pipeline is built to handle large volumes of data, leveraging GCP's scalable infrastructure to ensure it can grow with increasing data demands.
-   - Infrastructure consistency: With Terraform, the entire cloud environment is defined in code, ensuring consistent and repeatable infrastructure deployments.
-     
-This end-to-end solution provides real-time insights into cryptocurrency trends, enabling businesses and analysts to make data-driven decisions based on up-to-date market data. The integration of Looker for data visualization further enhances the value of the pipeline by providing easy-to-interpret reports and charts that highlight key metrics like market capitalization, price trends, and total volume, helping stakeholders understand and act on emerging trends in the cryptocurrency market.
+This solution provides key advantages such as reduced operational overhead, cost optimization by eliminating idle resources, and scalability to handle large volumes of data. The automated pipeline enables real-time insights into cryptocurrency trends, supporting data-driven decision-making. Finally, Looker is used for data visualization, offering easy-to-interpret charts that highlight critical metrics like market capitalization, price trends, and trading volumes, helping stakeholders stay informed about market movements.
 
 # Reference
 - Project Code : [Click Here](https://github.com/Abhijeet1026/Automated_ETL_CRYPTO_DATA_PIPELINE_GCP)
